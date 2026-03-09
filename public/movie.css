@@ -3,6 +3,6 @@
 }
 
 fieldset {
-    display: inline-flexbox
+    display: inline-flexbox;
     justify-content: center;
   }
