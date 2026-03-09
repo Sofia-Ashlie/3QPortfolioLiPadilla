@@ -14,12 +14,12 @@
     <link rel = "stylesheet" href = "movie.css">
     <link rel = "icon" href="../assets/cute.sticker.jpg" type = "image/x-icon">
    
-    <script src="script.js" defer></script>
+    <script src="movie.js" defer></script>
 </head>
 
     <body>
         <fieldset>
-        <form method="post" action="submit"></form>
+        <form method="post" action="submit" onsubmit="addMovie()">
         
         <label for="Title">Title:</label><br>
         <input type="text" id="Title" name="Title" required><br>
@@ -52,5 +52,7 @@
 
         <h3>Movie List</h3>
     </fieldset>
+    </form>
+    
     </body>
 </html>
