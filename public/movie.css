@@ -6,3 +6,7 @@ fieldset {
     display: inline-flexbox;
     justify-content: center;
   }
+
+.checked{
+    color: orange;
+}
