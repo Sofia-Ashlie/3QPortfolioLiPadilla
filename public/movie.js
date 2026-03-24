@@ -22,12 +22,12 @@ function addMovie(event) {
             const listArea = document.getElementById('movieList');
             const movies = JSON.parse(localStorage.getItem('movies')) || [];
 
-             listArea.innerHTML = "";
+            listArea.innerHTML = "";
 
-              movies.forEach((movie, index) => {
+            movies.forEach((movie, index) => {
             listArea.innerHTML += `
                 <div class="movie-item">
-                    <p>${index + 1}: ${movie.title} (${movie.year}) - <em>${movie.genre}</em></p>
+                    <p>${index + 1}: ${movie.title} (${movie.year}) - ${movie.genre}</p>
                 </div>
             `;
             });
