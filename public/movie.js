@@ -1,3 +1,4 @@
+//Add movie
 const loginForm = document.getElementById("Add");
 
 function addMovie(event) {

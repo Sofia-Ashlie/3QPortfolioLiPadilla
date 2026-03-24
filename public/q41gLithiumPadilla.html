@@ -41,11 +41,11 @@
         Rating: <br>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             
-            <span class="fa fa-star" value="1"></span>
-            <span class="fa fa-star" value="2"></span>
-            <span class="fa fa-star" value="3"></span>
-            <span class="fa fa-star" value="4"></span>
-            <span class="fa fa-star" value="5"></span>
+            <span class="fa fa-star star" value="1"></span>
+            <span class="fa fa-star star" value="2"></span>
+            <span class="fa fa-star star" value="3"></span>
+            <span class="fa fa-star star" value="4"></span>
+            <span class="fa fa-star star" value="5"></span>
         <br>
 
         <button onclick="addMovie()">Add Movie</button>
@@ -58,3 +58,27 @@
     
     </body>
 </html>
+
+
+<script>
+    //Star Rating
+let selectedRating = 0;
+
+    document.querySelectorAll(".star").forEach(star => {
+      star.addEventListener("click", function() {
+        selectedRating = this.getAttribute("value");
+        updateStars(selectedRating);
+      });
+    });
+
+    function updateStars(rating) {
+      document.querySelectorAll(".star").forEach(star => {
+        star.classList.remove("selected");
+        if (star.getAttribute("value") <= rating) {
+          star.classList.add("selected");
+        }
+      });
+    }
+
+    window.onload = displayMovies;
+</script>
