@@ -1,30 +1,40 @@
 const loginForm = document.getElementById("Add");
-const inputTitle = document.getElementById("Title");
-const inputYear = document.getElementById("Year");
-const inputGenre = document.getElementById("Genre");
 
 function addMovie(event) {
             event.preventDefault();
-            const title = document.getElementById('Title').value;
-            const year = document.getElementById('Year').value;
-            const genre = document.getElementById('Genre').value;
 
-            localStorage.setItem('Title', title);
-            localStorage.setItem('Year', year);
-            localStorage.setItem('Genre', genre);
+        const newMovie = {
+        title: document.getElementById('Title').value,
+        year: document.getElementById('Year').value,
+        genre: document.getElementById('Genre').value
+    };
 
-            displayData();
+          let movies = JSON.parse(localStorage.getItem('movies')) || [];
+          movies.push(newMovie);
+
+          localStorage.setItem('movies', JSON.stringify(movies));
+        
+        loginForm.reset();
+        displayData();
+
         }
         function displayData() {
-            const addTitle = localStorage.getItem('Title');
-            const addYear = localStorage.getItem('Year');
-            const addGenre = localStorage.getItem('Genre');
-            document.getElementById('Add').innerText = addMovie;
+            const listArea = document.getElementById('movieList');
+            const movies = JSON.parse(localStorage.getItem('movies')) || [];
+
+             listArea.innerHTML = "";
+
+              movies.forEach((movie, index) => {
+            listArea.innerHTML += `
+                <div class="movie-item">
+                    <p>${index + 1}: ${movie.title} (${movie.year}) - <em>${movie.genre}</em></p>
+                </div>
+            `;
+            });
         }
 
         loginForm.addEventListener("submit", addMovie);
         displayData();
-        
     
 
 
@@ -57,13 +67,3 @@ function addMovie(event) {
 
 
 
-
-
-
-
-0: {title: "How to Train Your Dragon", year: "2025", genre: "Comedy", rating: "5"}
-    genre: "Comedy"
-    rating: "5"
-    title: "How to Train Your Dragon"
-    year: "2025"
-1:

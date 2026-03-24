@@ -14,12 +14,12 @@
     <link rel = "stylesheet" href = "movie.css">
     <link rel = "icon" href="../assets/cute.sticker.jpg" type = "image/x-icon">
    
-    <script src="movie copy.js" defer></script>
+    <script src="movie.js" defer></script>
 </head>
 
     <body>
-        <fieldset>
-        <form method="post" action="submit" onsubmit="addMovie()">
+        <fieldset class="container">
+        <form id="Add" method="post" action="submit" onsubmit="addMovie()">
         
         <label for="Title">Title:</label><br>
         <input type="text" id="Title" name="Title" required><br>
@@ -27,30 +27,32 @@
         <label for="Year">Year:</label><br>
         <input type="text" id="Year" name="Year" required><br>
     
-        <label for="Genre" id="Genre">Genre:</label><br>
-        <select>
-            <option value="grade1" selected>Action</option>
-            <option value="grade2">Crime</option>
-            <option value="grade3">Sci-fi</option>
-            <option value="grade4">Romance</option>
-            <option value="grade5">Fantasy</option>
-            <option value="grade6">Comedy</option>
-            <option value="grade6">Horror</option>
+        <label for="Genre">Genre:</label><br>
+        <select id="Genre">
+            <option value="Action" selected>Action</option>
+            <option value="Crime">Crime</option>
+            <option value="Sci-fi">Sci-fi</option>
+            <option value="Romance">Romance</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Horror">Horror</option>
         </select><br>
 
         Rating: <br>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
+            <span class="fa fa-star" value="1"></span>
+            <span class="fa fa-star" value="2"></span>
+            <span class="fa fa-star" value="3"></span>
+            <span class="fa fa-star" value="4"></span>
+            <span class="fa fa-star" value="5"></span>
         <br>
 
-        <input type="submit" value="Add Movie" id="Add">
+        <button onclick="addMovie()">Add Movie</button>
 
         <h3>Movie List</h3>
+        <div id="movieList"></div>
+
     </fieldset>
     </form>
     
