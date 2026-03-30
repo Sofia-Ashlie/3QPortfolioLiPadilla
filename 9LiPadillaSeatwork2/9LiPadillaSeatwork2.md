@@ -35,8 +35,10 @@ Challenge:
 
         a. Could you summarize the differences between the CSS position values (static, relative, absolute, fixed)?
 
+        Static is the default position of an element without any change from its original coordinates.  Meanwhile, applying relative refers to determining the position of an element relative to its normal position.  Then, absolute positioning is relative to its nearest positioned ancestor.  Lastly, fixed positioning makes an element fixed to the viewport despite scrolling.
+
         b. How does absolute positioning depend on its parent element?
 
         c. How do you differentiate sticky from fixed (you can research on sticky)?
 
-        d. If you were designing a webpage for a school event, how might you use positioning to highlight important information? Please give concrete examples.
+        d. If you were designing a webpage for a school event, how might you use positioning to highlight important information?  Please give concrete examples.
