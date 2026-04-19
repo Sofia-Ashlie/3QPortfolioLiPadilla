@@ -47,9 +47,9 @@ function addMovie(event) {
 
         let movies = JSON.parse(localStorage.getItem('movies')) || [];
 
-        //Removes case-sensitivity
+        //Finds index of the inputted movie title and removes case-sensitivity
         const existingMovieIndex = movies.findIndex(
-            movie => movie.title.toLowerCase() === titleInput.toLowerCase()
+            movie => movie.title.toLowerCase() === titleInput.toLowerCase() 
         );
 
         //If user inputs the same title:
