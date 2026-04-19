@@ -38,7 +38,14 @@ Challenge:
         Static is the default position of an element without any change from its original coordinates.  Meanwhile, applying relative refers to determining the position of an element relative to its normal position.  Then, absolute positioning is relative to its nearest positioned ancestor.  Lastly, fixed positioning makes an element fixed to the viewport despite scrolling.
 
         b. How does absolute positioning depend on its parent element?
+        
+        It positions the element according to the edges of the closest parent element with an absolute position.
 
         c. How do you differentiate sticky from fixed (you can research on sticky)?
 
+        Fixed makes the element stay on a fixed position on the webpage despite scrolling.
+        Meanwhile, sticky lets the element go from a relative to a fixed position, depending on how far one scrolls down the webpage.
+
         d. If you were designing a webpage for a school event, how might you use positioning to highlight important information?  Please give concrete examples.
+
+        Since Fixed position is not affected by scrolling, this can be used to include a bar at the bottom of the viewport, which can contain the credits and my socials. Furthermore, relative positioning can be used when I want to add images to specific locations in my webpage in order to enhance the visuals of my website. Absolute positioning can be used when two images in my webpage are related to each other, and I want one of them to be positioned relative to the other.
