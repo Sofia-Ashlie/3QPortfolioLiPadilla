@@ -36,9 +36,34 @@ function addMovie(event) {
 
         loginForm.addEventListener("submit", addMovie);
         displayData();
+    
+    //2nd Graded: Update
+    function addMovie(event) {
+        event.preventDefault();
+        
+        const titleInput = document.getElementById('Title').value;
+        const yearInput = document.getElementById('Year').value;
+        const genreInput = document.getElementById('Genre').value;
 
-    
-    
+        let movies = JSON.parse(localStorage.getItem('movies')) || [];
+
+        //Removes case-sensitivity
+        const existingMovieIndex = movies.findIndex(
+            movie => movie.title.toLowerCase() === titleInput.toLowerCase()
+        );
+
+        //If user inputs the same title:
+        if (existingMovieIndex !== -1) {
+            // Update year and genre
+            movies[existingMovieIndex].year = yearInput;
+            movies[existingMovieIndex].genre = genreInput;
+        } 
+
+        // Save and refresh
+        localStorage.setItem('movies', JSON.stringify(movies));
+        loginForm.reset();
+        displayData();
+}
 
 
 
